@@ -1,0 +1,49 @@
+{
+  "contractVersion": 2,
+  "extension": "pg_hint_plan",
+  "smokeTest": {
+    "script": "windows/ci/smoke-test.ps1"
+  },
+  "runtimeRequirements": {
+    "extensionCreation": "optional",
+    "preload": "optional",
+    "backgroundWorker": false,
+    "clientExecutable": {
+      "required": false,
+      "packagePaths": []
+    }
+  },
+  "testSetup": {
+    "preload": "shared",
+    "backgroundWorker": false,
+    "settings": []
+  },
+  "coverage": {
+    "createExtension": "covered",
+    "backgroundWorker": "not-applicable",
+    "clientExecutable": "not-applicable",
+    "serverLogAssertions": "not-applicable",
+    "upgrade": "not-covered"
+  },
+  "functionalScenarios": [
+    {
+      "id": "planner-hints-applied",
+      "description": "Verifies SeqScan and IndexScan hints change the observed EXPLAIN plan to the requested scan shapes.",
+      "evidence": [
+        "query-plan"
+      ]
+    },
+    {
+      "id": "hint-table-compatibility-pg14-16",
+      "description": "Exercises the PostgreSQL 14-16 query-jumble and hint-table compatibility path and verifies it produces an execution plan.",
+      "evidence": [
+        "query-plan"
+      ],
+      "postgresqlMajors": [
+        14,
+        15,
+        16
+      ]
+    }
+  ]
+}
