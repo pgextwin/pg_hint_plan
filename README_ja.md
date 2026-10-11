@@ -8,6 +8,8 @@ pg_hint_plan本体のHint構文、設定、機能仕様、制限事項はupstrea
 
 ## PostgreSQL別upstream
 
+**現在公開中のpgextwin Release：** [v1.8.0-windows.2](https://github.com/pgextwin/pg_hint_plan/releases/tag/v1.8.0-windows.2)（PostgreSQL 14〜18）。下記の`.1`は初回の過去リリースを指します。現在の検証済みバイナリは`.2`を選んでください。各PGメジャーでは対応する上流系列を使用します。
+
 pg_hint_planはPostgreSQLメジャーバージョンごとに別のstable release系列を持ちます。
 
 | PostgreSQL | upstream ref | pg_hint_plan | 検証PostgreSQL |
