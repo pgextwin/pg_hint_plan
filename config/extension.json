@@ -4,15 +4,41 @@
   "upstream": {
     "repository": "ossc-db/pg_hint_plan",
     "perPostgresql": {
-      "14": { "ref": "REL14_1_4_4", "version": "1.4.4" },
-      "15": { "ref": "REL15_1_5_3", "version": "1.5.3" },
-      "16": { "ref": "REL16_1_6_2", "version": "1.6.2" },
-      "17": { "ref": "REL17_1_7_1", "version": "1.7.1" },
-      "18": { "ref": "REL18_1_8_0", "version": "1.8.0" }
+      "14": {
+        "ref": "REL14_1_4_4",
+        "version": "1.4.4",
+        "commit": "d69d54c206e6c49cccd7ca8ee4a3096e9147e446"
+      },
+      "15": {
+        "ref": "REL15_1_5_3",
+        "version": "1.5.3",
+        "commit": "701472c2fcf6d5b535db3bd2f226d5e28f287f79"
+      },
+      "16": {
+        "ref": "REL16_1_6_2",
+        "version": "1.6.2",
+        "commit": "b35a03c789b5707a4f96e2ee719101d4f7016a88"
+      },
+      "17": {
+        "ref": "REL17_1_7_1",
+        "version": "1.7.1",
+        "commit": "1aee00c81ef8ed4cb4e1c6951298ec7ff9fb4a17"
+      },
+      "18": {
+        "ref": "REL18_1_8_0",
+        "version": "1.8.0",
+        "commit": "88437bde5947e7bc40719e8b82eb8be2b39d71e8"
+      }
     }
   },
   "postgresql": {
-    "majors": [14, 15, 16, 17, 18]
+    "majors": [
+      14,
+      15,
+      16,
+      17,
+      18
+    ]
   },
   "windows": {
     "architecture": "x64"
@@ -21,24 +47,54 @@
     "verifyAgainstUpstream": true,
     "perPostgresql": {
       "14": [
-        { "repositoryPath": "COPYRIGHT", "upstreamPath": "COPYRIGHT" },
-        { "repositoryPath": "licenses/pg14/COPYRIGHT.postgresql", "upstreamPath": "COPYRIGHT.postgresql" }
+        {
+          "repositoryPath": "COPYRIGHT",
+          "upstreamPath": "COPYRIGHT"
+        },
+        {
+          "repositoryPath": "licenses/pg14/COPYRIGHT.postgresql",
+          "upstreamPath": "COPYRIGHT.postgresql"
+        }
       ],
       "15": [
-        { "repositoryPath": "COPYRIGHT", "upstreamPath": "COPYRIGHT" },
-        { "repositoryPath": "licenses/pg15/COPYRIGHT.postgresql", "upstreamPath": "COPYRIGHT.postgresql" }
+        {
+          "repositoryPath": "COPYRIGHT",
+          "upstreamPath": "COPYRIGHT"
+        },
+        {
+          "repositoryPath": "licenses/pg15/COPYRIGHT.postgresql",
+          "upstreamPath": "COPYRIGHT.postgresql"
+        }
       ],
       "16": [
-        { "repositoryPath": "COPYRIGHT", "upstreamPath": "COPYRIGHT" },
-        { "repositoryPath": "licenses/pg16/COPYRIGHT.postgresql", "upstreamPath": "COPYRIGHT.postgresql" }
+        {
+          "repositoryPath": "COPYRIGHT",
+          "upstreamPath": "COPYRIGHT"
+        },
+        {
+          "repositoryPath": "licenses/pg16/COPYRIGHT.postgresql",
+          "upstreamPath": "COPYRIGHT.postgresql"
+        }
       ],
       "17": [
-        { "repositoryPath": "COPYRIGHT", "upstreamPath": "COPYRIGHT" },
-        { "repositoryPath": "COPYRIGHT.postgresql", "upstreamPath": "COPYRIGHT.postgresql" }
+        {
+          "repositoryPath": "COPYRIGHT",
+          "upstreamPath": "COPYRIGHT"
+        },
+        {
+          "repositoryPath": "COPYRIGHT.postgresql",
+          "upstreamPath": "COPYRIGHT.postgresql"
+        }
       ],
       "18": [
-        { "repositoryPath": "COPYRIGHT", "upstreamPath": "COPYRIGHT" },
-        { "repositoryPath": "COPYRIGHT.postgresql", "upstreamPath": "COPYRIGHT.postgresql" }
+        {
+          "repositoryPath": "COPYRIGHT",
+          "upstreamPath": "COPYRIGHT"
+        },
+        {
+          "repositoryPath": "COPYRIGHT.postgresql",
+          "upstreamPath": "COPYRIGHT.postgresql"
+        }
       ]
     }
   }
