@@ -8,6 +8,8 @@ pg_hint_plan is maintained upstream by the pg_hint_plan community. Its behavior,
 
 ## Upstream release mapping
 
+**Current published pgextwin Release:** [v1.8.0-windows.2](https://github.com/pgextwin/pg_hint_plan/releases/tag/v1.8.0-windows.2) for PostgreSQL 14–18. The `.1` tag mentioned below is the historical first package set; choose `.2` for the current verified binaries. Each PostgreSQL major uses its own upstream release series.
+
 pg_hint_plan maintains a separate stable release series for each PostgreSQL major version.
 
 | PostgreSQL | Upstream ref | pg_hint_plan version | Tested PostgreSQL |
