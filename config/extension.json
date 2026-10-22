@@ -48,51 +48,51 @@
     "perPostgresql": {
       "14": [
         {
-          "repositoryPath": "COPYRIGHT",
+          "repositoryPath": "licenses/updates/2026/COPYRIGHT",
           "upstreamPath": "COPYRIGHT"
         },
         {
-          "repositoryPath": "licenses/pg14/COPYRIGHT.postgresql",
+          "repositoryPath": "licenses/updates/2026/pg14/COPYRIGHT.postgresql",
           "upstreamPath": "COPYRIGHT.postgresql"
         }
       ],
       "15": [
         {
-          "repositoryPath": "COPYRIGHT",
+          "repositoryPath": "licenses/updates/2026/COPYRIGHT",
           "upstreamPath": "COPYRIGHT"
         },
         {
-          "repositoryPath": "licenses/pg15/COPYRIGHT.postgresql",
+          "repositoryPath": "licenses/updates/2026/pg15_16/COPYRIGHT.postgresql",
           "upstreamPath": "COPYRIGHT.postgresql"
         }
       ],
       "16": [
         {
-          "repositoryPath": "COPYRIGHT",
+          "repositoryPath": "licenses/updates/2026/COPYRIGHT",
           "upstreamPath": "COPYRIGHT"
         },
         {
-          "repositoryPath": "licenses/pg16/COPYRIGHT.postgresql",
+          "repositoryPath": "licenses/updates/2026/pg15_16/COPYRIGHT.postgresql",
           "upstreamPath": "COPYRIGHT.postgresql"
         }
       ],
       "17": [
         {
-          "repositoryPath": "COPYRIGHT",
+          "repositoryPath": "licenses/updates/2026/COPYRIGHT",
           "upstreamPath": "COPYRIGHT"
         },
         {
-          "repositoryPath": "COPYRIGHT.postgresql",
+          "repositoryPath": "licenses/updates/2026/pg17_18/COPYRIGHT.postgresql",
           "upstreamPath": "COPYRIGHT.postgresql"
         }
       ],
       "18": [
         {
-          "repositoryPath": "COPYRIGHT",
+          "repositoryPath": "licenses/updates/2026/COPYRIGHT",
           "upstreamPath": "COPYRIGHT"
         },
         {
-          "repositoryPath": "COPYRIGHT.postgresql",
+          "repositoryPath": "licenses/updates/2026/pg17_18/COPYRIGHT.postgresql",
           "upstreamPath": "COPYRIGHT.postgresql"
         }
       ]
