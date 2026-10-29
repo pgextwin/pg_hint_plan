@@ -65,7 +65,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python .pgextwin-build/scripts/issue311-r06-fleet-local-prepare.py run
       - name: R06 one-shot timeout witness (nonpublishing, exact request-only push)
-        if: contains(github.event.head_commit.added, '.github/execution-requests/r-20261029-r06localhintan04.json')
         shell: bash
         run: |
           python - <<'PY'
@@ -73,16 +72,24 @@ jobs:
           from pathlib import Path
           p = Path('issue311-r06-fleet-local-prepare-receipt.json')
           x = json.loads(p.read_text(encoding='utf-8'))
-          assert x['requestId'] == 'r-20261029-r06localhintan04' and x['result'] in ('NO_UPDATE', 'UPDATE_PRESENT_NOT_AUTHORIZED')
+          if x['requestId'] != 'r-20261029-r06localhintan06':
+            raise SystemExit(0)  # No anomaly injection for unrelated requests.
+          assert x['result'] in ('NO_UPDATE', 'UPDATE_PRESENT_NOT_AUTHORIZED')
           assert x['publicationAuthorized'] is False and x['publisherSourceKindAuthorized'] is False
           x['result'] = 'FAILED'
           x['reason'] = 'ISSUE311_R06_GENUINE_TIMEOUT_ONE_SHOT_NONPUBLISHING'
           p.write_text(json.dumps(x, sort_keys=True) + '\n', encoding='utf-8')
           PY
       - name: R06 original one-shot timed-out step (real Actions timeout)
-        if: contains(github.event.head_commit.added, '.github/execution-requests/r-20261029-r06localhintan04.json')
         timeout-minutes: 1
-        run: sleep 150
+        run: |
+          python - <<'PY'
+          import json, time
+          from pathlib import Path
+          x = json.loads(Path('issue311-r06-fleet-local-prepare-receipt.json').read_text(encoding='utf-8'))
+          if x['requestId'] == 'r-20261029-r06localhintan06' and x['reason'] == 'ISSUE311_R06_GENUINE_TIMEOUT_ONE_SHOT_NONPUBLISHING':
+            time.sleep(150)  # Original Actions step must time out, not a simulated flag.
+          PY
       - if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
