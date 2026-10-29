@@ -72,7 +72,7 @@ jobs:
           from pathlib import Path
           p = Path('issue311-r06-fleet-local-prepare-receipt.json')
           x = json.loads(p.read_text(encoding='utf-8'))
-          if x['requestId'] != 'r-20261029-r06localhintan06':
+          if x['requestId'] != 'r-20261030-r06localhintan07':
             raise SystemExit(0)  # No anomaly injection for unrelated requests.
           assert x['result'] in ('NO_UPDATE', 'UPDATE_PRESENT_NOT_AUTHORIZED')
           assert x['publicationAuthorized'] is False and x['publisherSourceKindAuthorized'] is False
@@ -87,7 +87,7 @@ jobs:
           import json, time
           from pathlib import Path
           x = json.loads(Path('issue311-r06-fleet-local-prepare-receipt.json').read_text(encoding='utf-8'))
-          if x['requestId'] == 'r-20261029-r06localhintan06' and x['reason'] == 'ISSUE311_R06_GENUINE_TIMEOUT_ONE_SHOT_NONPUBLISHING':
+          if x['requestId'] == 'r-20261030-r06localhintan07' and x['reason'] == 'ISSUE311_R06_GENUINE_TIMEOUT_ONE_SHOT_NONPUBLISHING':
             time.sleep(150)  # Original Actions step must time out, not a simulated flag.
           PY
       - if: always()
