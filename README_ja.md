@@ -15,7 +15,7 @@
 3. PostgreSQLメジャーバージョンごとに対応する上流バージョンが異なります。pg_hint_planのロード方法やCREATE EXTENSIONの要否は利用方法によって異なるため、上流ドキュメントに従って設定してください。
 4. 設定の反映後にPostgreSQLを起動し、検証環境で動作を確認してください。
 
-ReleaseのSHA256SUMS.txtでZIPの整合性を確認できます。SPDX形式のSBOM、脆弱性レポート、署名付き証明の有無もReleaseで確認できます。
+ZIPの整合性は、Releaseに掲載された`SHA256SUMS.txt`で確認できます。SPDX形式のSBOM、脆弱性レポート、署名付き証明の有無もReleaseで確認できます。
 
 ## ライセンス
 
