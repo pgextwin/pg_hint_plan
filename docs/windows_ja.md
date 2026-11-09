@@ -4,7 +4,7 @@
 
 ## 対応するZIPを選ぶ
 
-PostgreSQLのメジャーごとにupstream pg_hint_plan releaseが異なります。必ずPostgreSQLメジャーと一致するZIPを使用してください。
+PostgreSQLのメジャーバージョンごとに、対応する上流pg_hint_planのリリースが異なります。必ずPostgreSQLのメジャーバージョンに一致するZIPを使用してください。
 
 ~~~text
 PG14 -> pg_hint_plan-REL14_1_4_4-pg14-windows-x64.zip
@@ -42,7 +42,7 @@ shared_preload_libraries = 'pg_hint_plan'
 
 を設定してPostgreSQLを再起動します。
 
-既存のpreload対象がある場合はカンマ区切りで追加してください。
+既にプリロードする拡張機能が指定されている場合は、カンマ区切りで追加してください。
 
 ## Extension作成
 
@@ -83,7 +83,7 @@ Hint構文、利用可能なHint、hint table、query-idの仕様はupstreamド�
 
 PG14〜16ではpg_hint_planがPostgreSQL coreのquery-jumble処理を直接利用しますが、その実装は通常のWindows PostgreSQL DLLからexportされません。
 
-pgextwinはpackage作成時に対象PostgreSQLの公式source archiveを取得し、SHA-256を検証してから必要objectを再compileします。
+pgextwinはパッケージ作成時に対象PostgreSQLの公式ソースアーカイブを取得し、SHA-256を検証してから必要なオブジェクトを再コンパイルします。
 
 対象:
 
@@ -95,7 +95,7 @@ PostgreSQL minor更新時には、共通metadataの更新と同時にsource arch
 
 ## 更新時の注意
 
-PostgreSQL majorを更新するときは新major向けZIPへ入れ替えてください。例えばPG17用DLLをPG18で流用してはいけません。
+PostgreSQLのメジャーバージョンを更新するときは、新しいメジャーバージョン向けのZIPへ入れ替えてください。例えば、PG17用DLLをPG18で流用してはいけません。
 
 pg_hint_plan自体もPostgreSQL majorごとにstable系列が異なるため、単純に「同じpg_hint_plan versionを全PostgreSQLで使用する」構成ではありません。
 
