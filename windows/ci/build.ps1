@@ -42,17 +42,26 @@ if (Test-Path $queryScanL) {
     $winFlex = Get-Command win_flex.exe -ErrorAction SilentlyContinue
 
     if ($null -eq $winFlex) {
-        Write-Host "win_flex.exe not found; installing winflexbison3 for the build."
-        & choco install winflexbison3 --yes --no-progress
-        if ($LASTEXITCODE -notin @(0, 1641, 3010)) {
-            throw "Chocolatey failed to install winflexbison3 with exit code $LASTEXITCODE."
+        # Chocolatey's public V2 feed can transiently return HTTP 429/503/504.
+        # Only retry this same nonprivileged dependency installation, bounded
+        # to three attempts; require the actual executable before compiling.
+        for ($attempt = 1; $attempt -le 3; $attempt++) {
+            Write-Host "win_flex.exe missing; Chocolatey install attempt $attempt/3."
+            & choco install winflexbison3 --yes --no-progress
+            $installExitCode = $LASTEXITCODE
+            $winFlex = Get-Command win_flex.exe -ErrorAction SilentlyContinue
+            if ($null -ne $winFlex -and $installExitCode -in @(0, 1641, 3010)) {
+                break
+            }
+            $winFlex = $null
+            if ($attempt -lt 3) {
+                Start-Sleep -Seconds (5 * $attempt)
+            }
         }
-
-        $winFlex = Get-Command win_flex.exe -ErrorAction SilentlyContinue
     }
 
     if ($null -eq $winFlex) {
-        throw "win_flex.exe was not found after installing winflexbison3."
+        throw "win_flex.exe was not found after three bounded winflexbison3 installation attempts (last Chocolatey exit code $installExitCode)."
     }
 
     & $winFlex.Source "--outfile=$queryScanC" $queryScanL
