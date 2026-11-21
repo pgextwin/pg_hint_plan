@@ -34,6 +34,7 @@ if ($LASTEXITCODE -ne 0 -or $pgVersionText -notmatch 'PostgreSQL\s+(\d+)\.(\d+)'
 
 $pgMajor = [int]$Matches[1]
 $pgVersion = "$($Matches[1]).$($Matches[2])"
+$clCStandard = if ($pgMajor -eq 19) { ' /std:c11' } else { '' }
 
 $queryScanL = Join-Path $UpstreamDir "query_scan.l"
 $queryScanC = Join-Path $UpstreamDir "query_scan.c"
@@ -153,7 +154,7 @@ $cmdFile = Join-Path $tempRoot "pg_hint_plan-build.cmd"
 $compileQueryScan = ""
 if (Test-Path $queryScanC) {
     $compileQueryScan = @"
-cl /nologo /O2 /MD /DWIN32 /DWIN32_NO_STATUS /D_CRT_SECURE_NO_WARNINGS ^
+cl /nologo${clCStandard} /O2 /MD /DWIN32 /DWIN32_NO_STATUS /D_CRT_SECURE_NO_WARNINGS ^
   /I"$PgRoot\include\server\port\win32_msvc" ^
   /I"$PgRoot\include\server\port\win32" ^
   /I"$PgRoot\include\server" ^
@@ -173,7 +174,7 @@ call "$vsDevCmd" -arch=x64 -host_arch=x64
 if errorlevel 1 exit /b %errorlevel%
 cd /d "$UpstreamDir"
 
-cl /nologo /O2 /MD /DWIN32 /DWIN32_NO_STATUS /D_CRT_SECURE_NO_WARNINGS ^
+cl /nologo${clCStandard} /O2 /MD /DWIN32 /DWIN32_NO_STATUS /D_CRT_SECURE_NO_WARNINGS ^
   /I"$PgRoot\include\server\port\win32_msvc" ^
   /I"$PgRoot\include\server\port\win32" ^
   /I"$PgRoot\include\server" ^

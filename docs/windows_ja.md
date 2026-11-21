@@ -7,12 +7,14 @@
 PostgreSQLのメジャーバージョンごとに、対応する上流pg_hint_planのリリースが異なります。必ずPostgreSQLのメジャーバージョンに一致するZIPを使用してください。
 
 ~~~text
-PG14 -> pg_hint_plan-REL14_1_4_4-pg14-windows-x64.zip
-PG15 -> pg_hint_plan-REL15_1_5_3-pg15-windows-x64.zip
-PG16 -> pg_hint_plan-REL16_1_6_2-pg16-windows-x64.zip
-PG17 -> pg_hint_plan-REL17_1_7_1-pg17-windows-x64.zip
-PG18 -> pg_hint_plan-REL18_1_8_0-pg18-windows-x64.zip
+PG15 -> pg_hint_plan-REL15_1_5_4-pg15-windows-x64.zip
+PG16 -> pg_hint_plan-REL16_1_6_3-pg16-windows-x64.zip
+PG17 -> pg_hint_plan-REL17_1_7_2-pg17-windows-x64.zip
+PG18 -> pg_hint_plan-REL18_1_8_1-pg18-windows-x64.zip
+PG19 -> pg_hint_plan-REL19_1_9_0-pg19-windows-x64.zip
 ~~~
+
+PostgreSQL 14向けのZIPは[過去のReleases](https://github.com/pgextwin/pg_hint_plan/releases)を参照してください。
 
 ## 配置
 
@@ -79,15 +81,14 @@ WHERE id = 1;
 
 Hint構文、利用可能なHint、hint table、query-idの仕様はupstreamドキュメントを参照してください。
 
-## PG14〜16のWindows互換処理
+## PG15〜16のWindows互換処理
 
-PG14〜16ではpg_hint_planがPostgreSQL coreのquery-jumble処理を直接利用しますが、その実装は通常のWindows PostgreSQL DLLからexportされません。
+PG15〜16ではpg_hint_planがPostgreSQL coreのquery-jumble処理を直接利用しますが、その実装は通常のWindows PostgreSQL DLLからexportされません。
 
 pgextwinはパッケージ作成時に対象PostgreSQLの公式ソースアーカイブを取得し、SHA-256を検証してから必要なオブジェクトを再コンパイルします。
 
 対象:
 
-- PostgreSQL 14.24
 - PostgreSQL 15.19
 - PostgreSQL 16.15
 

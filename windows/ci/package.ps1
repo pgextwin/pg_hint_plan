@@ -28,6 +28,11 @@ $assetName = "pg_hint_plan-$UpstreamRef-pg$PostgreSqlMajor-windows-x64"
 $stage = Join-Path $DistDir $assetName
 $zipPath = Join-Path $DistDir "$assetName.zip"
 
+& git -C $UpstreamDir -c core.autocrlf=false checkout-index --force -- COPYRIGHT COPYRIGHT.postgresql
+if ($LASTEXITCODE -ne 0) {
+    throw "Failed to restore the upstream license notices from Git."
+}
+
 if (Test-Path $stage) {
     Remove-Item $stage -Recurse -Force
 }

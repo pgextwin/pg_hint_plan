@@ -6,7 +6,9 @@
 
 ## ダウンロードと対応環境
 
-[最新の公開Release](https://github.com/pgextwin/pg_hint_plan/releases/latest)から、利用中のPostgreSQLメジャーバージョン向けのZIPを選んでください。[過去のReleases](https://github.com/pgextwin/pg_hint_plan/releases)も確認できます。PostgreSQL **14〜18**向けの公開状況は[pgextwinカタログ](https://pgextwin.github.io/website/ja/)を参照してください。PostgreSQL 14のコミュニティサポートは2026年11月12日に終了します。
+現在のWindowsビルド対象はPostgreSQL **15〜19**です。[pgextwinカタログ](https://pgextwin.github.io/website/ja/)で公開状況を確認し、利用中のメジャーバージョンに合うZIPを選んでください。
+
+PostgreSQL 14のコミュニティサポートは2026年11月12日に終了しました。PostgreSQL 14向けのパッケージは[過去のReleases](https://github.com/pgextwin/pg_hint_plan/releases)から入手できます。
 
 ## インストール
 

@@ -4,11 +4,6 @@
   "upstream": {
     "repository": "ossc-db/pg_hint_plan",
     "perPostgresql": {
-      "14": {
-        "ref": "REL14_1_4_5",
-        "version": "1.4.5",
-        "commit": "cf003edac10606703308209f749b761f9ac39ad0"
-      },
       "15": {
         "ref": "REL15_1_5_4",
         "version": "1.5.4",
@@ -28,16 +23,21 @@
         "ref": "REL18_1_8_1",
         "version": "1.8.1",
         "commit": "9a3f851e1993d6728a9707956dabfcf22cc35b38"
+      },
+      "19": {
+        "ref": "REL19_1_9_0",
+        "version": "1.9.0",
+        "commit": "4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d"
       }
     }
   },
   "postgresql": {
     "majors": [
-      14,
       15,
       16,
       17,
-      18
+      18,
+      19
     ]
   },
   "windows": {
@@ -46,16 +46,6 @@
   "license": {
     "verifyAgainstUpstream": true,
     "perPostgresql": {
-      "14": [
-        {
-          "repositoryPath": "licenses/updates/2026/COPYRIGHT",
-          "upstreamPath": "COPYRIGHT"
-        },
-        {
-          "repositoryPath": "licenses/updates/2026/pg14/COPYRIGHT.postgresql",
-          "upstreamPath": "COPYRIGHT.postgresql"
-        }
-      ],
       "15": [
         {
           "repositoryPath": "licenses/updates/2026/COPYRIGHT",
@@ -93,6 +83,16 @@
         },
         {
           "repositoryPath": "licenses/updates/2026/pg17_18/COPYRIGHT.postgresql",
+          "upstreamPath": "COPYRIGHT.postgresql"
+        }
+      ],
+      "19": [
+        {
+          "repositoryPath": "licenses/updates/2026/COPYRIGHT",
+          "upstreamPath": "COPYRIGHT"
+        },
+        {
+          "repositoryPath": "licenses/updates/2026/pg19/COPYRIGHT.postgresql",
           "upstreamPath": "COPYRIGHT.postgresql"
         }
       ]
