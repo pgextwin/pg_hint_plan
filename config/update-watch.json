@@ -5,9 +5,6 @@
   "strategy": "github-releases-per-postgresql",
   "prereleases": false,
   "perPostgresql": {
-    "14": {
-      "tagPattern": "^REL14_(?P<version>[0-9]+_[0-9]+_[0-9]+)$"
-    },
     "15": {
       "tagPattern": "^REL15_(?P<version>[0-9]+_[0-9]+_[0-9]+)$"
     },
@@ -21,8 +18,7 @@
       "tagPattern": "^REL18_(?P<version>[0-9]+_[0-9]+_[0-9]+)$"
     },
     "19": {
-      "tagPattern": "^REL19_(?P<version>[0-9]+_[0-9]+_[0-9]+)$",
-      "informational": true
+      "tagPattern": "^REL19_(?P<version>[0-9]+_[0-9]+_[0-9]+)$"
     }
   }
 }

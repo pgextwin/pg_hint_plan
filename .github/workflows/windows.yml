@@ -20,7 +20,7 @@ jobs:
   windows:
     permissions:
       contents: read
-    uses: pgextwin/build/.github/workflows/build-extension.yml@9e21608eb584367460a1f89340722ad203ed6ad9
+    uses: pgextwin/build/.github/workflows/build-extension.yml@0de5dfe50a1404dd1bef5aa41d6f22727294efd6
     with:
       extension_config_path: config/extension.json
       test_contract_path: config/test-contract.json

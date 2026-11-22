@@ -34,13 +34,12 @@
       ]
     },
     {
-      "id": "hint-table-compatibility-pg14-16",
-      "description": "Exercises the PostgreSQL 14-16 query-jumble and hint-table compatibility path and verifies it produces an execution plan.",
+      "id": "hint-table-compatibility-pg15-16",
+      "description": "Exercises the PostgreSQL 15-16 query-jumble and hint-table compatibility path and verifies it produces an execution plan.",
       "evidence": [
         "query-plan"
       ],
       "postgresqlMajors": [
-        14,
         15,
         16
       ]

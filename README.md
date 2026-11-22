@@ -6,7 +6,9 @@ This repository distributes **unofficial Windows x64 binaries** of [pg_hint_plan
 
 ## Download
 
-Use the [latest published Release](https://github.com/pgextwin/pg_hint_plan/releases/latest) or [all Releases](https://github.com/pgextwin/pg_hint_plan/releases). Published PostgreSQL **14–18** packages are listed in the [pgextwin catalog](https://pgextwin.github.io/website/en/). Select the ZIP for your PostgreSQL major. PostgreSQL 14 community support ends November 12, 2026.
+The maintained Windows build matrix covers PostgreSQL **15–19**. Check the [pgextwin catalog](https://pgextwin.github.io/website/en/) for published packages and select the ZIP for your PostgreSQL major.
+
+PostgreSQL 14 community support ended on November 12, 2026. PostgreSQL 14 packages are available in the [archived Releases](https://github.com/pgextwin/pg_hint_plan/releases).
 
 ## Installation
 

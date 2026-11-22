@@ -34,6 +34,7 @@ if ($LASTEXITCODE -ne 0 -or $pgVersionText -notmatch 'PostgreSQL\s+(\d+)\.(\d+)'
 
 $pgMajor = [int]$Matches[1]
 $pgVersion = "$($Matches[1]).$($Matches[2])"
+$clCStandard = if ($pgMajor -eq 19) { ' /std:c11' } else { '' }
 
 $queryScanL = Join-Path $UpstreamDir "query_scan.l"
 $queryScanC = Join-Path $UpstreamDir "query_scan.c"
@@ -80,7 +81,9 @@ if ($pgMajor -lt 17) {
     $sourceSha256 = @{
         "14.24" = "a7fa7ed3d558172355f51406097a7bd4f6b473be80f311ef7cda96bf383d8897"
         "15.19" = "e1a64a87a46b825b88c082e4518161a47aab53c45694964f8ba1df28f7859f89"
+        "15.20" = "30e65cbbb771a39b553ed2df7e65622e65647aed55dbc19bd0fe853ff0a08442"
         "16.15" = "c1575341fa7bd40f5274ea465b34390f4dc64cdd0770af327005caaeb9f6b7ed"
+        "16.16" = "9d5cd8633043b75740d5d59749c6b7365e6aeb53c47098b1a5e80bb18f87881a"
     }
 
     if (-not $sourceSha256.ContainsKey($pgVersion)) {
@@ -153,7 +156,7 @@ $cmdFile = Join-Path $tempRoot "pg_hint_plan-build.cmd"
 $compileQueryScan = ""
 if (Test-Path $queryScanC) {
     $compileQueryScan = @"
-cl /nologo /O2 /MD /DWIN32 /DWIN32_NO_STATUS /D_CRT_SECURE_NO_WARNINGS ^
+cl /nologo${clCStandard} /O2 /MD /DWIN32 /DWIN32_NO_STATUS /D_CRT_SECURE_NO_WARNINGS ^
   /I"$PgRoot\include\server\port\win32_msvc" ^
   /I"$PgRoot\include\server\port\win32" ^
   /I"$PgRoot\include\server" ^
@@ -173,7 +176,7 @@ call "$vsDevCmd" -arch=x64 -host_arch=x64
 if errorlevel 1 exit /b %errorlevel%
 cd /d "$UpstreamDir"
 
-cl /nologo /O2 /MD /DWIN32 /DWIN32_NO_STATUS /D_CRT_SECURE_NO_WARNINGS ^
+cl /nologo${clCStandard} /O2 /MD /DWIN32 /DWIN32_NO_STATUS /D_CRT_SECURE_NO_WARNINGS ^
   /I"$PgRoot\include\server\port\win32_msvc" ^
   /I"$PgRoot\include\server\port\win32" ^
   /I"$PgRoot\include\server" ^
