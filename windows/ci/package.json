@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "distribution": "dll-sql",
+  "files": [
+    {
+      "source": "upstream",
+      "path": "pg_hint_plan.dll",
+      "destination": "lib/pg_hint_plan.dll",
+      "targets": [
+        "install",
+        "zip"
+      ]
+    },
+    {
+      "source": "upstream",
+      "path": "pg_hint_plan.control",
+      "destination": "share/extension/pg_hint_plan.control",
+      "targets": [
+        "install",
+        "zip"
+      ]
+    },
+    {
+      "source": "license",
+      "path": "licenses/updates/2026/COPYRIGHT",
+      "destination": "COPYRIGHT",
+      "targets": [
+        "zip"
+      ]
+    },
+    {
+      "source": "upstream",
+      "path": "README.md",
+      "destination": "UPSTREAM-README.md",
+      "targets": [
+        "zip"
+      ]
+    }
+  ],
+  "perPostgresql": {
+    "15": {
+      "sqlInstallPath": [
+        "1.3.0",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.5",
+        "1.3.6",
+        "1.3.7",
+        "1.3.8",
+        "1.3.9",
+        "1.3.10",
+        "1.3.11",
+        "1.4",
+        "1.4.1",
+        "1.4.2",
+        "1.4.3",
+        "1.4.4",
+        "1.4.5",
+        "1.5",
+        "1.5.1",
+        "1.5.2",
+        "1.5.3",
+        "1.5.4"
+      ],
+      "files": [
+        {
+          "source": "upstream",
+          "path": "pg_hint_plan--*.sql",
+          "destination": "share/extension/{fileName}",
+          "targets": [
+            "install",
+            "zip"
+          ],
+          "expectedCount": 23
+        },
+        {
+          "source": "license",
+          "path": "licenses/updates/2026/pg15_16/COPYRIGHT.postgresql",
+          "destination": "COPYRIGHT.postgresql",
+          "targets": [
+            "zip"
+          ]
+        }
+      ]
+    },
+    "16": {
+      "sqlInstallPath": [
+        "1.3.0",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.5",
+        "1.3.6",
+        "1.3.7",
+        "1.3.8",
+        "1.3.9",
+        "1.3.10",
+        "1.3.11",
+        "1.4",
+        "1.4.1",
+        "1.4.2",
+        "1.4.3",
+        "1.4.4",
+        "1.4.5",
+        "1.5",
+        "1.5.1",
+        "1.5.2",
+        "1.5.3",
+        "1.5.4",
+        "1.6.0",
+        "1.6.1",
+        "1.6.2",
+        "1.6.3"
+      ],
+      "files": [
+        {
+          "source": "upstream",
+          "path": "pg_hint_plan--*.sql",
+          "destination": "share/extension/{fileName}",
+          "targets": [
+            "install",
+            "zip"
+          ],
+          "expectedCount": 27
+        },
+        {
+          "source": "license",
+          "path": "licenses/updates/2026/pg15_16/COPYRIGHT.postgresql",
+          "destination": "COPYRIGHT.postgresql",
+          "targets": [
+            "zip"
+          ]
+        }
+      ]
+    },
+    "17": {
+      "sqlInstallPath": [
+        "1.3.0",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.5",
+        "1.3.6",
+        "1.3.7",
+        "1.3.8",
+        "1.3.9",
+        "1.3.10",
+        "1.3.11",
+        "1.4",
+        "1.4.1",
+        "1.4.2",
+        "1.4.3",
+        "1.4.4",
+        "1.4.5",
+        "1.5",
+        "1.5.1",
+        "1.5.2",
+        "1.5.3",
+        "1.5.4",
+        "1.6.0",
+        "1.6.1",
+        "1.6.2",
+        "1.6.3",
+        "1.7.0",
+        "1.7.1",
+        "1.7.2"
+      ],
+      "files": [
+        {
+          "source": "upstream",
+          "path": "pg_hint_plan--*.sql",
+          "destination": "share/extension/{fileName}",
+          "targets": [
+            "install",
+            "zip"
+          ],
+          "expectedCount": 30
+        },
+        {
+          "source": "license",
+          "path": "licenses/updates/2026/pg17_18/COPYRIGHT.postgresql",
+          "destination": "COPYRIGHT.postgresql",
+          "targets": [
+            "zip"
+          ]
+        }
+      ]
+    },
+    "18": {
+      "sqlInstallPath": [
+        "1.3.0",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.5",
+        "1.3.6",
+        "1.3.7",
+        "1.3.8",
+        "1.3.9",
+        "1.3.10",
+        "1.3.11",
+        "1.4",
+        "1.4.1",
+        "1.4.2",
+        "1.4.3",
+        "1.4.4",
+        "1.4.5",
+        "1.5",
+        "1.5.1",
+        "1.5.2",
+        "1.5.3",
+        "1.5.4",
+        "1.6.0",
+        "1.6.1",
+        "1.6.2",
+        "1.6.3",
+        "1.7.0",
+        "1.7.1",
+        "1.7.2",
+        "1.8.0",
+        "1.8.1"
+      ],
+      "files": [
+        {
+          "source": "upstream",
+          "path": "pg_hint_plan--*.sql",
+          "destination": "share/extension/{fileName}",
+          "targets": [
+            "install",
+            "zip"
+          ],
+          "expectedCount": 32
+        },
+        {
+          "source": "license",
+          "path": "licenses/updates/2026/pg17_18/COPYRIGHT.postgresql",
+          "destination": "COPYRIGHT.postgresql",
+          "targets": [
+            "zip"
+          ]
+        }
+      ]
+    },
+    "19": {
+      "sqlInstallPath": [
+        "1.3.0",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.5",
+        "1.3.6",
+        "1.3.7",
+        "1.3.8",
+        "1.3.9",
+        "1.3.10",
+        "1.3.11",
+        "1.4",
+        "1.4.1",
+        "1.4.2",
+        "1.4.3",
+        "1.4.4",
+        "1.4.5",
+        "1.5",
+        "1.5.1",
+        "1.5.2",
+        "1.5.3",
+        "1.5.4",
+        "1.6.0",
+        "1.6.1",
+        "1.6.2",
+        "1.6.3",
+        "1.7.0",
+        "1.7.1",
+        "1.7.2",
+        "1.8.0",
+        "1.8.1",
+        "1.9.0"
+      ],
+      "files": [
+        {
+          "source": "upstream",
+          "path": "pg_hint_plan--*.sql",
+          "destination": "share/extension/{fileName}",
+          "targets": [
+            "install",
+            "zip"
+          ],
+          "expectedCount": 33
+        },
+        {
+          "source": "license",
+          "path": "licenses/updates/2026/pg19/COPYRIGHT.postgresql",
+          "destination": "COPYRIGHT.postgresql",
+          "targets": [
+            "zip"
+          ]
+        }
+      ]
+    }
+  },
+  "packageInfo": [
+    "pg_hint_plan Windows binary package",
+    "===================================",
+    "",
+    "Upstream repository: {upstreamRepository}",
+    "Upstream ref:        {upstreamRef}",
+    "Upstream commit:     {upstreamCommit}",
+    "pg_hint_plan version: {version}",
+    "PostgreSQL major:    {pgMajor}",
+    "PostgreSQL tested:   {pgTested}",
+    "Architecture:        {architecture}",
+    "Compiler:            MSVC",
+    "License files:       COPYRIGHT, COPYRIGHT.postgresql",
+    "",
+    "This is an unofficial pgextwin Windows package built from the official pg_hint_plan source."
+  ]
+}
